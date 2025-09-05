@@ -2,6 +2,14 @@
 
 [My startup - Simon](https://simon.cs260.click)
 
+## Tips About Using Github and VSCode
+
+If you change the README or notes files in Github, use the little pencil icon, make your edits, and commit changes with a title.
+
+In **the terminal**, run `git fetch`, `git status`, git should say that there is a change that has not been updated. Then use `git pull` to pull those changes from github onto your VS code
+
+To send changes from VSCode back to github, first in the terminal run `git add .` this adds all the changes that you just made, aka staging the commit. Then commit those changes using `git commit -m "insert title"` Once you've committed, push those changes to github using `git push`
+
 ## Helpful links
 
 - [Course instruction](https://github.com/webprogramming260)
