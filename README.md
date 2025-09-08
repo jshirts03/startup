@@ -17,11 +17,11 @@ Yes!! This works. I have now made another change, but I'm going to try and do th
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
@@ -33,29 +33,25 @@ I come from a family of die-hard BYU fans. We love watching the BYU football, so
 
 The interface should display plenty of BYU school spirit, with some custom emoji's and/or GIF's that are BYU specific.
 
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Login with username and password
+- Clean aesthetics, themed in Royal blue and White
+- Custom reactions such as Touchdown, Field Goal, First down, DEFENSE, 3rd down roar, Cosmo dance, Y hand, Sitake dance, etc.
+- Real time chat updates
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
+I'm not quite sure what any of these do (that's why I'm in this class), but basing off the example this is my best guess.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Uses correct HTML structure. Probably >1 HTML page
+- **CSS** - Application adjustable for all screen sizes. BYU theme makes you want to rise and shout.
+- **React** - Provides login, displays chat messages, allows user input for chat and/or reactions
+- **Service** - Backend services for... idk but I guess login
+- **DB/Login** - Register and login users. Remember chat history
+- **WebSocket** - Chat messages and reactions updated real time on all connected users
 
 ## 🚀 AWS deliverable
 
