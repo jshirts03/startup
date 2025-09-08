@@ -31,7 +31,7 @@ I come from a family of die-hard BYU fans. We love watching the BYU football, so
 
 ![Design image](images/sketch1.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The interface should display plenty of BYU school spirit, with some custom emoji's and/or GIF's that are BYU specific.
 
 ```mermaid
 sequenceDiagram
