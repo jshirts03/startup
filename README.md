@@ -1,4 +1,4 @@
-# GO COUGS
+# Cougar Nation
 
 [My Notes](notes.md)
 
@@ -25,11 +25,11 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+I come from a family of die-hard BYU fans. We love watching the BYU football, soccer, volleyball, and basketball games, but we can never watch the games together because we're all scattered across the country! Go Cougs allows a group of friends or family to react to the game in real time in a BYU themed group chat where you can share the joys of victory with those you love!
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](IMG_3198.jpg)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
