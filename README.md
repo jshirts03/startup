@@ -1,4 +1,4 @@
-# Your startup name here
+# GO COUGS
 
 [My Notes](notes.md)
 
