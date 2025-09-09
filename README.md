@@ -12,9 +12,6 @@ Yes!! This works. I have now made another change, but I'm going to try and do th
 
 ## 🚀 Specification Deliverable
 
-> [!NOTE]
->  Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
-
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [x] Proper use of Markdown
@@ -44,12 +41,11 @@ The interface should display plenty of BYU school spirit, with some custom emoji
 ### Technologies
 
 I am going to use the required technologies in the following ways.
-I'm not quite sure what any of these do (that's why I'm in this class), but basing off the example this is my best guess.
 
-- **HTML** - Uses correct HTML structure. Probably >1 HTML page
+- **HTML** - Uses correct HTML structure. Probably 2 HTML pages, 1 for login, and 1 for chatting
 - **CSS** - Application adjustable for all screen sizes. BYU theme makes you want to rise and shout.
 - **React** - Provides login, displays chat messages, allows user input for chat and/or reactions
-- **Service** - Backend services for... idk but I guess login
+- **Service** - Backend services for login and logout, will use the Inspiration API to give random motivational quotes
 - **DB/Login** - Register and login users. Remember chat history
 - **WebSocket** - Chat messages and reactions updated real time on all connected users
 
