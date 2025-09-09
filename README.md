@@ -36,6 +36,7 @@ The interface should display plenty of BYU school spirit, with some custom emoji
 - Login with username and password
 - Clean aesthetics, themed in Royal blue and White
 - Custom reactions such as Touchdown, Field Goal, First down, DEFENSE, 3rd down roar, Cosmo dance, Y hand, Sitake dance, etc.
+- Display of motivational quotes
 - Real time chat updates
 
 ### Technologies
