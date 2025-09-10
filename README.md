@@ -1,14 +1,10 @@
-# Cougar Nation
+# Go Cougs
 
 [My Notes](notes.md)
 
 A brief description of the application here. Hi! This is my first time using github. Does this work?
 Yes!! This works. I have now made another change, but I'm going to try and do this from the terminal. Yay! I am now a pro at editing things in VS code and Github.
-> [!NOTE]
->  This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
 
-> [!NOTE]
->  If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
 
 ## 🚀 Specification Deliverable
 
