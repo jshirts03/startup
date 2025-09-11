@@ -1,4 +1,4 @@
-# Go Cougs
+# Virtual ROC
 
 [My Notes](notes.md)
 
