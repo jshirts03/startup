@@ -32,7 +32,6 @@ My IP address is: 34.206.104.67
 
 ## Caddy
 
-No problems worked just like it said in the [instruction](https://github.com/webprogramming260/.github/blob/main/profile/webServers/https/https.md).
 
 **Caddy** is a webservice that manages encryption of data when any computer is in communciation with our website. It uses **Let's Encrypt** to create a free TLS certificate. This is basically how secure connections are made on the internat. 
 
