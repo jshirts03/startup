@@ -40,6 +40,13 @@ Using *http*, data flows from computer to computer without being encrypted, whic
 
 ![Caddy Image](images/letsencryptCertIssue.jpg)
 
+
+I had to manually enter into the web server using my key pair and ubuntu. I edited the Caddy file to route through my domain name instead of :80, which represented http. Caddy automatically registered my domain for a TLS certificate via Let's Encrypt and now my website is SECURE!
+
+<https://virtualroc.link>
+^Did you notice the s? :)
+
+
 ## HTML
 
 This was easy. I was careful to use the correct structural elements such as header, footer, main, nav, and form. The links between the three views work great using the `a` element.
