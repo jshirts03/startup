@@ -38,6 +38,8 @@ No problems worked just like it said in the [instruction](https://github.com/web
 
 Using *http*, data flows from computer to computer without being encrypted, which makes it really easy to steal information. Let's Encrypt creates a TLS certificate, which contains a public and private key. The server and client each exchange their public keys, and then a encryption algorithm is performed to create a private key that is only known by those 2 devices. The certificate certifies that both parties are legit. Once this "handshake" has taken place, the client and server are free to communcate securely. That's why in most browsers, the *https* domains have a little lock by them that say secure.
 
+![Caddy Image](images/letsencryptCertIssue.jpg)
+
 ## HTML
 
 This was easy. I was careful to use the correct structural elements such as header, footer, main, nav, and form. The links between the three views work great using the `a` element.
