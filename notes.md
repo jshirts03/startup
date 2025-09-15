@@ -48,9 +48,25 @@ I had to manually enter into the web server using my key pair and ubuntu. I edit
 
 ## HTML
 
-This was easy. I was careful to use the correct structural elements such as header, footer, main, nav, and form. The links between the three views work great using the `a` element.
+HTML is essentially the base level for organizing text on a webpage. It is a markdown language, and formats text using **tags**. Here is an example of the first bit of HTML I wrote using [codepen.io](https://codepen.io)
 
-The part I didn't like was the duplication of the header and footer code. This is messy, but it will get cleaned up when I get to React.
+```
+<body>
+  <main>
+    <h3>Welcome to my website</h3>
+    <p class="intro"> This website consists of...</p>
+    <ul>
+      <li>text</li>
+      <li>bullet points</li>
+      <li>cool stuff</li>
+    </ul>
+    <p class="outro"> I hope you enjoy our content! Learn more <a href="https://virtualroc.link">here</a>!</p>
+  </main>
+</body>
+```
+
+I learned how to examine the html for simon by cloning the code from the cs260 git repository. I can view it in a live server by using that extension in VS code, then I can use the inspect feature to go through the html elements and they are highlighted on the webpage so I can see what the code turns into. Pretty useful. I looked at a lot of elements, and noticed the importance of structural pieces sus as `<div>`, `<header>`, `<body>`, etc.  I also learned that you can use `<input type='text'>` to include a text box input, which will be super useful for when I want to input chat messages into virtual roc.
+
 
 ## CSS
 
