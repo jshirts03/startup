@@ -72,7 +72,7 @@ Most html elements have a `name` attribute and an `id` attribute. I was curious 
 
 ## CSS
 
-The best way to include CSS styling in your html file is to include it with a link. Here's an example:
+The best way to include CSS styling in your html file is to include it with a link. It MUST be in the *header*. Here's an example:
 
 ```<link rel="stylesheet" href="styles.css" />```
 
