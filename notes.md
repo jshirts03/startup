@@ -73,11 +73,15 @@ Most html elements have a `name` attribute and an `id` attribute. I was curious 
 ## CSS
 
 The best way to include CSS styling in your html file is to include it with a link. Here's an example:
+
 ```<link rel="stylesheet" href="styles.css" />```
+
 styles.css
+
 ```p {
   color: green;
-}```
+}
+```
 
 This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
 
