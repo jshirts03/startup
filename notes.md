@@ -67,6 +67,8 @@ HTML is essentially the base level for organizing text on a webpage. It is a mar
 
 I learned how to examine the html for simon by cloning the code from the cs260 git repository. I can view it in a live server by using that extension in VS code, then I can use the inspect feature to go through the html elements and they are highlighted on the webpage so I can see what the code turns into. Pretty useful. I looked at a lot of elements, and noticed the importance of structural pieces sus as `<div>`, `<header>`, `<body>`, etc.  I also learned that you can use `<input type='text'>` to include a text box input, which will be super useful for when I want to input chat messages into virtual roc.
 
+Most html elements have a `name` attribute and an `id` attribute. I was curious about this. **ID** is used for CSS to identify and highlight specific html elements and select them for styling. **Name** attributes are used for items where information must be sent to the backend. In input items, when the form is submitted, the name is the first part of a key value pair sent out. For example, a text box with name "fullname" and text "Jonah Shirts" would be sent like this fullname=Jonah Shirts
+
 
 ## CSS
 
