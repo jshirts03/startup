@@ -78,7 +78,8 @@ The best way to include CSS styling in your html file is to include it with a li
 
 styles.css
 
-```p {
+```
+p {
   color: green;
 }
 ```
