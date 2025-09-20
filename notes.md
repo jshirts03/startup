@@ -18,20 +18,74 @@ To send changes from VSCode back to github, first in the terminal run `git add .
 
 ## AWS
 
-My IP address is: 54.81.96.130
-Launching my AMI I initially put it on a private subnet. Even though it had a public IP address and the security group was right, I wasn't able to connect to it.
+45% of the industry uses AWS as a cloud computing service, providing secure and reliable services from development, to storage, to upscaling or downscaling a website. **EC2** is a service that allows you to essentially rent space on a server to host your website. This allows you to host and manage a website without having to use your own hardware, and it is a safe and cheap option. I created my first EC2 **instance**. I didn't understand a lot of the specific settings that they asked us to use, but I copied the CS260 template to be the beginnings of my website. I used a **t3.nano** server size because it is the cheapest option and my website shouldn't have a large amount of traffic on it while I am developing it. Plus, my website won't need a ton of processing power so it will do just fine with a t3.nano instead of a t3.micro or t2.micro server size.
+
+This is super secure, and I had to create a **key pair**, which is a file of code that serves as an encrypted password to access my instance. I also had to set up a two-factor authentication with Duo Mobile in order to log in to my account. I noticed that you can have a ICS account for your website. I as the owner login as the root, but it makes sense that I could give access to employees or others to work on and manage my AWS instances, but they would not have ownership. I thought that was interesting.
+
+The default for EC2 is that you are given an IP address (internet ID) for your website. But if I shut the website down and then rebooted it, EC2 would give me a different IP address, which would be annoying because then I'd have to reassign it to my domain name, change lots of stuff, etc. To fix this issue, I created an **elastic IP address**. This means that I essentially own an IP address, and I can assign any of my instances to that IP address. This is nice because even if I reset the website I can keep the same IP address every time.
+
+I used **Route 43**, another AWS service, to select a domain name for my website. I bought the name <http://virtualroc.link> for $5. The .link was cheaper than a .com or .org, but maybe if this website gets pretty functional I might but the .com domain name and try to upscale a bit. 
+
+My IP address is: 34.206.104.67
+
+
 
 ## Caddy
 
-No problems worked just like it said in the [instruction](https://github.com/webprogramming260/.github/blob/main/profile/webServers/https/https.md).
+
+**Caddy** is a webservice that manages encryption of data when any computer is in communciation with our website. It uses **Let's Encrypt** to create a free TLS (Transport Layer Security) certificate. This is basically how secure connections are made on the internat. 
+
+Using *http*, data flows from computer to computer without being encrypted, which makes it really easy to steal information. Let's Encrypt creates a TLS certificate, which contains a public and private key. The server and client each exchange their public keys, and then a encryption algorithm is performed to create a private key that is only known by those 2 devices. The certificate certifies that both parties are legit. Once this "handshake" has taken place, the client and server are free to communcate securely. That's why in most browsers, the *https* domains have a little lock by them that say secure.
+
+![Caddy Image](images/letsencryptCertIssue.jpg)
+
+
+I had to manually enter into the web server using my key pair and ubuntu. I edited the Caddy file to route through my domain name instead of :80, which represented http. Caddy automatically registered my domain for a TLS certificate via Let's Encrypt and now my website is SECURE!
+
+<https://virtualroc.link>
+^Did you notice the s? :)
+
 
 ## HTML
 
-This was easy. I was careful to use the correct structural elements such as header, footer, main, nav, and form. The links between the three views work great using the `a` element.
+HTML is essentially the base level for organizing text on a webpage. It is a markdown language, and formats text using **tags**. Here is an example of the first bit of HTML I wrote using [codepen.io](https://codepen.io)
 
-The part I didn't like was the duplication of the header and footer code. This is messy, but it will get cleaned up when I get to React.
+```
+<body>
+  <main>
+    <h3>Welcome to my website</h3>
+    <p class="intro"> This website consists of...</p>
+    <ul>
+      <li>text</li>
+      <li>bullet points</li>
+      <li>cool stuff</li>
+    </ul>
+    <p class="outro"> I hope you enjoy our content! Learn more <a href="https://virtualroc.link">here</a>!</p>
+  </main>
+</body>
+```
+
+I learned how to examine the html for simon by cloning the code from the cs260 git repository. I can view it in a live server by using that extension in VS code, then I can use the inspect feature to go through the html elements and they are highlighted on the webpage so I can see what the code turns into. Pretty useful. I looked at a lot of elements, and noticed the importance of structural pieces sus as `<div>`, `<header>`, `<body>`, etc.  I also learned that you can use `<input type='text'>` to include a text box input, which will be super useful for when I want to input chat messages into virtual roc.
+
+Most html elements have a `name` attribute and an `id` attribute. I was curious about this. **ID** is used for CSS to identify and highlight specific html elements and select them for styling. **Name** attributes are used for items where information must be sent to the backend. In input items, when the form is submitted, the name is the first part of a key value pair sent out. For example, a text box with name "fullname" and text "Jonah Shirts" would be sent like this fullname=Jonah Shirts
+
 
 ## CSS
+
+The best way to include CSS styling in your html file is to include it with a link. It MUST be in the *header*. Here's an example:
+
+```<link rel="stylesheet" href="styles.css" />```
+
+styles.css
+
+```
+p {
+  color: green;
+}
+```
+
+![BoxImage](https://github.com/webprogramming260/.github/raw/main/profile/css/introduction/cssBoxModel.jpg)
+
 
 This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
 

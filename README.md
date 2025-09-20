@@ -1,67 +1,56 @@
-# Your startup name here
+# Virtual ROC
 
 [My Notes](notes.md)
 
 A brief description of the application here. Hi! This is my first time using github. Does this work?
 Yes!! This works. I have now made another change, but I'm going to try and do this from the terminal. Yay! I am now a pro at editing things in VS code and Github.
-> [!NOTE]
->  This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
 
-> [!NOTE]
->  If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
 
 ## 🚀 Specification Deliverable
 
-> [!NOTE]
->  Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
-
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+I come from a family of die-hard BYU fans. We love watching the BYU football, soccer, volleyball, and basketball games, but we can never watch the games together because we're all scattered across the country! Go Cougs allows a group of friends or family to react to the game in real time in a BYU themed group chat where you can share the joys of victory with those you love!
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](images/sketch1.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The interface should display plenty of BYU school spirit, with some custom emoji's and/or GIF's that are BYU specific.
 
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Login with username and password
+- Clean aesthetics, themed in Royal blue and White
+- Custom reactions such as Touchdown, Field Goal, First down, DEFENSE, 3rd down roar, Cosmo dance, Y hand, Sitake dance, etc.
+- Display of motivational quotes
+- Real time chat updates
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Uses correct HTML structure. Probably 2 HTML pages, 1 for login, and 1 for chatting
+- **CSS** - Application adjustable for all screen sizes. BYU theme makes you want to rise and shout.
+- **React** - Provides login, displays chat messages, allows user input for chat and/or reactions
+- **Service** - Backend services for login and logout, will use the Inspiration API to give random motivational quotes
+- **DB/Login** - Register and login users. Remember chat history
+- **WebSocket** - Chat messages and reactions updated real time on all connected users
 
 ## 🚀 AWS deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Server deployed and accessible with custom domain name** - [My server link](https://yourdomainnamehere.click).
+- [X] **Server deployed and accessible with custom domain name** - [My server link](https://virtualroc.link).
 
 ## 🚀 HTML deliverable
 
