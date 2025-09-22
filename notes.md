@@ -104,6 +104,25 @@ In order to adapt your website to a mobile browser, you should first use this co
 `<meta name="viewport" content="width=device-width,initial-scale=1" />`
 
 
+You can also import `media` which will allow you to detect which orientation the device is in. 
+
+```@media (orientation: portrait) {
+  div {
+    transform: rotate(270deg);
+  }
+}
+```
+In this code, when the orientation changes to portrait mode, it will rotate all of the div elements 270 degrees.
+
+```
+@media (orientation: portrait) {
+  aside {
+    display: none;
+  }
+}
+```
+While this code will hide an aside element when the phone is in portrait mode because it'll be too crowded with the narrow screen.
+
 
 
 
