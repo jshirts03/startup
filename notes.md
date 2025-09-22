@@ -92,6 +92,42 @@ p {
 }
 ```
 
+
+You can format the display in different ways to allow your website to be comfortably viewed on any size screen. Here is an example of block, inline, flex, and grid displays.
+
+![display_image](https://github.com/webprogramming260/.github/raw/main/profile/css/responsive/cssDisplay.jpg)
+
+
+
+In order to adapt your website to a mobile browser, you should first use this code in the `head` tag to disable the browser's default scaling.
+
+`<meta name="viewport" content="width=device-width,initial-scale=1" />`
+
+
+You can also import `media` which will allow you to detect which orientation the device is in. 
+
+```@media (orientation: portrait) {
+  div {
+    transform: rotate(270deg);
+  }
+}
+```
+In this code, when the orientation changes to portrait mode, it will rotate all of the div elements 270 degrees.
+
+```
+@media (orientation: portrait) {
+  aside {
+    display: none;
+  }
+}
+```
+While this code will hide an aside element when the phone is in portrait mode because it'll be too crowded with the narrow screen.
+
+
+
+
+
+
 ![BoxImage](https://github.com/webprogramming260/.github/raw/main/profile/css/introduction/cssBoxModel.jpg)
 
 
