@@ -92,6 +92,23 @@ p {
 }
 ```
 
+
+You can format the display in different ways to allow your website to be comfortably viewed on any size screen. Here is an example of block, inline, flex, and grid displays.
+
+![display_image](https://github.com/webprogramming260/.github/raw/main/profile/css/responsive/cssDisplay.jpg)
+
+
+
+In order to adapt your website to a mobile browser, you should first use this code in the `head` tag to disable the browser's default scaling.
+
+`<meta name="viewport" content="width=device-width,initial-scale=1" />`
+
+
+
+
+
+
+
 ![BoxImage](https://github.com/webprogramming260/.github/raw/main/profile/css/introduction/cssBoxModel.jpg)
 
 
