@@ -56,15 +56,15 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [X] **HTML pages** - There are 3 html pages. Index.html(main login), about_roc.html(about_page), chat.html(chat window)
+- [X] **Proper HTML element usage** - proper use of html, body, header, nav, main, footer
+- [X] **Links** - Links in the nav section go to their respective pages
+- [X] **Text** - Lots of text for login info, about page has lots of text, chat has text fillers
+- [X] **3rd party API placeholder** - At bottom of about_roc page there is a placeholder to display motivational quotes in case of a BYU loss
+- [X] **Images** - Cosmo sailor hat image on each webpage
+- [X] **Login placeholder** - login placeholder on main page (index.html)
+- [X] **DB data placeholder** - Will store how many total messages a user has sent in the chat. Also will store in memory the last 10 chats
+- [X] **WebSocket placeholder** - Chat section will allow chats to be sent and updated in real time.
 
 ## 🚀 CSS deliverable
 
