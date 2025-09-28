@@ -131,48 +131,22 @@ While this code will hide an aside element when the phone is in portrait mode be
 ![BoxImage](https://github.com/webprogramming260/.github/raw/main/profile/css/introduction/cssBoxModel.jpg)
 
 
-This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
+## Javascript
 
-Bootstrap seems a bit like magic. It styles things nicely, but is very opinionated. You either do, or you do not. There doesn't seem to be much in between.
+**Javascript is by far the most used programming language in the world.**
 
-I did like the navbar it made it super easy to build a responsive header.
+We can run javascript in the terminal using Node.js. It runs it in the same way Google Chrome does, but in the terminal instead of a browser. I installed Node and learned how to use it and install packages. Packages are open-source prewritten javascript that can be brought in to my code and utilized. Kind of like Python libraries or Bootstrap elements.
 
-```html
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand">
-            <img src="logo.svg" width="30" height="30" class="d-inline-block align-top" alt="" />
-            Calmer
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="play.html">Play</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-```
+**Node Checklist**
 
-I also used SVG to make the icon and logo for the app. This turned out to be a piece of cake.
+1. Create your project directory
+2. Initialize it for use with NPM by running npm init -y
+3. Make sure .gitignore file contains node_modules
+4. Install any desired packages with npm install <package name here>
+5. Add require('<package name here>') to your application's JavaScript
+6. Use the code the package provides in your JavaScript
+7. Run your code with node index.js
 
-```html
-<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" fill="#0066aa" rx="10" ry="10" />
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="72" font-family="Arial" fill="white">C</text>
-</svg>
-```
 
 ## React Part 1: Routing
 
