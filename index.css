@@ -15,3 +15,11 @@ main {
 footer {
     flex: 0 30px ;
 }
+
+menu {
+    display:flex
+}
+
+#logo {
+    display: flex
+}
