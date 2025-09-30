@@ -9,17 +9,11 @@ header {
     background: #dedeec;
     color: rgb(72, 15, 228);
     border-bottom: 3px solid rgb(72, 15, 228);
+    border-top: 3px solid rgb(72, 15, 228);
 }
 
 header img {
     height: clamp(2rem, 3.5vw, 4rem);
-}
-main {
-    flex: 1 ;
-}
-
-footer {
-    flex: 0 30px ;
 }
 
 nav{
@@ -56,4 +50,12 @@ nav{
 
 #blank {
     flex: 0.333;
+}
+
+main {
+    flex: 1 ;
+}
+
+footer {
+    flex: 0 30px ;
 }
