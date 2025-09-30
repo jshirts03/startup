@@ -10,9 +10,9 @@ body {
 header {
     flex: 0 60px;
     background: #dedeec;
-    color: rgb(72, 15, 228);
-    border-bottom: 3px solid rgb(72, 15, 228);
-    border-top: 3px solid rgb(72, 15, 228);
+    color: #062D5E;
+    border-bottom: 3px solid #062D5E;
+    border-top: 3px solid #062D5E;
 }
 
 header img {
@@ -33,7 +33,6 @@ nav{
 }
 #links {
     display: flex;
-    color: rgb(176, 171, 171)
 }
 
 #logo {
@@ -49,7 +48,12 @@ nav{
 
 .nav_links {
     padding-right: 10px;
-    font-size: clamp(1rem, 1.4vw, 2rem)
+    font-size: clamp(1rem, 1.4vw, 2rem);
+    color: #062D5E;
+}
+
+.nav_links:hover{
+    color: rgb(69, 86, 241)
 }
 
 #blank {
@@ -60,6 +64,15 @@ main {
     flex: 1 ;
 }
 
+
+
+
 footer {
+    display: flex;
     flex: 0 30px ;
+    background: #dedeec;
+    color: rgb(72, 15, 228);
+    border-bottom: 3px solid rgb(72, 15, 228);
+    border-top: 3px solid rgb(72, 15, 228);
+
 }
