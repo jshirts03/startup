@@ -33,6 +33,7 @@ nav{
 }
 #links {
     display: flex;
+    
 }
 
 #logo {
@@ -91,4 +92,16 @@ footer {
     padding-right: 20px;
     padding-top: 10px;
     font-size: clamp(1rem, 1.4vw, 2rem);
+}
+
+@media (max-width: 650px) {
+  nav {
+    flex-direction: column;
+  }
+  #links{
+    justify-content: center;
+  }
+  #link_holder{
+    order: 2;
+  }
 }
