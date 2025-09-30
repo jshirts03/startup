@@ -6,8 +6,13 @@ body {
 
 header {
     flex: 0 80px;
+    background: #dedeec;
+    color: rgb(72, 15, 228);
 }
 
+header img {
+    height: 3rem;
+}
 main {
     flex: 1 ;
 }
@@ -16,10 +21,37 @@ footer {
     flex: 0 30px ;
 }
 
-menu {
-    display:flex
+nav{
+    display: flex;
+}
+
+#link_holder{
+    display:flex;
+    flex: 0.333;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 5px;
+}
+#links {
+    display: flex;
+    color: rgb(176, 171, 171)
 }
 
 #logo {
-    display: flex
+    display: flex;
+    flex: 0.333;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+#title {
+    font-size: 2.5vw;
+}
+.nav_links {
+    padding-right: 10px;
+    font-size: clamp(1rem, 1.4vw, 3rem)
+}
+
+#blank {
+    flex: 0.333;
 }
