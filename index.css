@@ -8,10 +8,11 @@ header {
     flex: 0 80px;
     background: #dedeec;
     color: rgb(72, 15, 228);
+    border-bottom: 3px solid rgb(72, 15, 228);
 }
 
 header img {
-    height: 3rem;
+    height: clamp(2rem, 3.5vw, 4rem);
 }
 main {
     flex: 1 ;
@@ -45,11 +46,12 @@ nav{
 }
 
 #title {
-    font-size: 2.5vw;
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
+
 .nav_links {
     padding-right: 10px;
-    font-size: clamp(1rem, 1.4vw, 3rem)
+    font-size: clamp(1rem, 1.4vw, 2rem)
 }
 
 #blank {
