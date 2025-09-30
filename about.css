@@ -1,0 +1,94 @@
+html, body {
+    height: 100%
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 0 60px;
+    background: #dedeec;
+    color: #062D5E;
+    border-bottom: 3px solid #062D5E;
+    border-top: 3px solid #062D5E;
+}
+
+header img {
+    height: clamp(2rem, 3.5vw, 4rem);
+}
+
+nav{
+    display: flex;
+    padding-bottom: 10px;
+}
+
+#link_holder{
+    display:flex;
+    flex: 0.333;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 5px;
+}
+#links {
+    display: flex;
+}
+
+#logo {
+    display: flex;
+    flex: 0.333;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+#title {
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+.nav_links {
+    padding-right: 10px;
+    font-size: clamp(1rem, 1.4vw, 2rem);
+    color: #062D5E;
+}
+
+.nav_links:hover{
+    color: rgb(69, 86, 241)
+}
+
+#blank {
+    flex: 0.333;
+}
+
+main {
+    flex: 1 ;
+}
+
+
+
+
+footer {
+    display: flex;
+    flex: 0 30px ;
+    background: #dedeec;
+    color: #062D5E;
+    border-bottom: 3px solid #062D5E;
+    border-top: 3px solid #062D5E;
+}
+
+#footer_note {
+    flex: 0.75;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: clamp(1rem, 1.4vw, 2rem);
+}
+
+#github {
+    flex: 0.25;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    padding-top: 10px;
+    font-size: clamp(1rem, 1.4vw, 2rem);
+}
