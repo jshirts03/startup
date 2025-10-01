@@ -156,4 +156,7 @@ footer {
   #login_blank{
     flex: 0.1;
   }
+  #login{
+    flex: 0.8
+  }
 }
