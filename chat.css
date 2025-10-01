@@ -132,3 +132,22 @@ footer {
     padding-top: 10px;
     font-size: clamp(1rem, 1.4vw, 2rem);
 }
+
+
+@media (max-width: 650px) {
+  nav {
+    flex-direction: column;
+  }
+  #links{
+    justify-content: center;
+  }
+  #link_holder{
+    order: 2;
+  }
+  .blank{
+    flex: 0.05;
+  }
+  #rocchat{
+    flex: 0.9
+  }
+}
