@@ -61,8 +61,28 @@ nav{
     flex: 0.333;
 }
 
+
+
+
+
 main {
     flex: 1 ;
+    display: flex;
+}
+
+#login{
+    flex: 0.8;
+    display:flex;
+    justify-content: center;
+    color: #062D5E;
+}
+
+#email_label{
+    padding-right: 32.5px;
+}
+
+#login_blank{
+    flex: 0.1
 }
 
 

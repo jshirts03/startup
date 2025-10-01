@@ -26,11 +26,14 @@
     </header>
     <hr />
     <main>
-        <div>
+        <div id="login_blank">
+            <p></p>
+        </div>
+        <div id="login">
         <form method="get" action="chat.html">
                 <h2>Login Here</h2>
                 <div id="username">
-                    <spa>Email</spa> <input type="text" placeholder="your email here" />
+                    <spa id="email_label">Email</spa><input type="text" placeholder="your email here" />
                 </div>
                 <div id="password">
                     <spa>Password</spa> <input type="text" placeholder="your password here" />
@@ -38,6 +41,9 @@
                 <button type="submit">Login</button>
                 <button type="submit">Create</button>
         </form>
+        </div>
+        <div id="login_blank">
+            <p></p>
         </div>
     </main>
     <hr />
