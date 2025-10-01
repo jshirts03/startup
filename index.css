@@ -68,24 +68,53 @@ nav{
 main {
     flex: 1 ;
     display: flex;
+    background-color: rgb(12, 12, 183);
 }
 
 #login{
-    flex: 0.8;
+    flex: 0.6;
     display:flex;
+    flex-direction: row;
     justify-content: center;
     color: #062D5E;
+
 }
+
+main form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 50px 30px 50px;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    background-color: white;
+    border: 3px solid #062D5E
+}
+
+#buttons{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
 
 #email_label{
     padding-right: 32.5px;
 }
 
 #login_blank{
-    flex: 0.1
+    flex: 0.2;
 }
 
+#login_here{
+    display: flex;
+    justify-content: center;
+}
 
+#buttons{
+    display: flex;
+    justify-content: right;
+}
 
 
 footer {
@@ -123,5 +152,8 @@ footer {
   }
   #link_holder{
     order: 2;
+  }
+  #login_blank{
+    flex: 0.1;
   }
 }
