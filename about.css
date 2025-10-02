@@ -82,6 +82,14 @@ main {
 
 }
 
+#quotes{
+    text-align: center;
+    border: 3px solid #062D5E;
+    background-color: #f2f2f3;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
 #roc_card{
     margin-left: 15vw;
     margin-right: 2.5vw;
