@@ -64,6 +64,28 @@ main {
     flex: 1 ;
 }
 
+#card_holder{
+    display: flex;
+}
+
+.card{
+    flex: 0.5;
+    border: 3px solid #062D5E;
+}
+
+#roc_card{
+    margin-left: 15vw;
+    margin-right: 2.5vw;
+}
+
+#dev_card{
+    
+}
+
+#dev_photo img{
+    height: 30vh;
+}
+
 
 
 
