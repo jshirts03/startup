@@ -71,6 +71,15 @@ main {
 .card{
     flex: 0.5;
     border: 3px solid #062D5E;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#message_holder{
+    padding-left: 7vw;
+    padding-right: 7vw;
+    padding-top: 10px;
+
 }
 
 #roc_card{
@@ -79,11 +88,12 @@ main {
 }
 
 #dev_card{
-    
+    margin-right: 15vw;
+    margin-left: 2.5vw;
 }
 
-#dev_photo img{
-    height: 30vh;
+#dev_button{
+    display: none;
 }
 
 
@@ -113,4 +123,28 @@ footer {
     padding-right: 20px;
     padding-top: 10px;
     font-size: clamp(1rem, 1.4vw, 2rem);
+}
+
+@media (max-width: 650px) {
+  nav {
+    flex-direction: column;
+  }
+  #links{
+    justify-content: center;
+  }
+  #link_holder{
+    order: 2;
+  }
+  #card_holder{
+    flex-direction: column;
+    justify-content: center;
+  }
+  #roc_card{
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
+  #dev_card{
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
 }
