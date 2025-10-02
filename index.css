@@ -68,7 +68,7 @@ nav{
 main {
     flex: 1 ;
     display: flex;
-    background-color: rgb(12, 12, 183);
+    background-color: rgb(255, 255, 255);
 }
 
 #login{
@@ -87,7 +87,7 @@ main form{
     padding: 30px 50px 30px 50px;
     margin-top: 20vh;
     margin-bottom: 20vh;
-    background-color: white;
+    background-color: rgb(223, 223, 223);
     border: 3px solid #062D5E
 }
 
