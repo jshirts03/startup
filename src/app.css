@@ -1,5 +1,5 @@
 .body {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -63,7 +63,8 @@ nav{
 
 
 main {
-    height: 100%;
+    flex: 1;
+    flex-direction: column;
     display: flex;
     background-color: rgb(255, 255, 255);
 }

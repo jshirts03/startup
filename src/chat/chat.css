@@ -80,8 +80,9 @@ main {
     flex: 0.6;
     background-color: white;
     color: #062D5E;
-    padding: 10px 30px 10px 30px;
-    margin: 35px 35px;
+    padding: 15px 20px 5px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: 3px solid #062D5E;
 }
 
@@ -110,8 +111,14 @@ main {
 
 #chat{
     display:flex;
+    flex-direction: row;
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 #chatbar{
     flex: 1;
@@ -162,6 +169,7 @@ footer {
     flex: 0.05;
   }
   #rocchat{
-    flex: 0.9
+    flex: 0.9;
+    margin: 10px 10px;
   }
 }
