@@ -1,8 +1,5 @@
-html, .body {
-    height: 100%
-}
-
 .body {
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -66,7 +63,7 @@ nav{
 
 
 main {
-    flex: 1 ;
+    height: 100%;
     display: flex;
     background-color: rgb(255, 255, 255);
 }
@@ -119,7 +116,7 @@ main form{
 
 footer {
     display: flex;
-    flex: 0 30px ;
+    flex: 0 30px;
     background: #dedeec;
     color: #062D5E;
     border-bottom: 3px solid #062D5E;
