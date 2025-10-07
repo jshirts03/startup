@@ -150,7 +150,12 @@ We can run javascript in the terminal using Node.js. It runs it in the same way 
 
 ## React Part 1: Routing
 
-Setting up Vite and React was pretty simple. I had a bit of trouble because of conflicting CSS. This isn't as straight forward as you would find with Svelte or Vue, but I made it work in the end. If there was a ton of CSS it would be a real problem. It sure was nice to have the code structured in a more usable way.
+We are transferring our project from pure html and css to React. We use the `Browser Router` component along with the `Routes` and `Route` tags to make the webpage routed through React instead of the browser using <a> tags. That is why none of the url's you see in websites ends with .html, because they're using React routing or another similar service.
+
+We do this by using **Vite**, which is a software that packages .jsx files that React reads into usable Javascript and CSS that a browser can use. Running the dev command in Vite also allows us to view a http page of the react website (replacement of Live Server when using html in VS Code).
+
+
+
 
 ## React Part 2: Reactivity
 
