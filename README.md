@@ -81,9 +81,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - I did not complete this part of the deliverable.
+- [X] **Bundled using Vite** - Vite was used to bundle the project (Vite paths are in the packages.json file). I used `npm run dev` a lot to debug. 
+- [X] **Components** - There is an index.html and index.jsx file that configures the app.jsx as the parent component inside the src directory. There are 3 main components, `login`, `about`, and `chat`. Each has it's corresponding .jsx file with a function sending out the html main code, as well as it's own css file. 
+- [X] **Router** - Router is functioning properly. Links go to the paths directed by the router (no .html on end of any link). If a link is invalid it called the not_valid function and displays some ugly error html. The login page is the home page.
 
 ## 🚀 React part 2: Reactivity deliverable
 
