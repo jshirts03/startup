@@ -70,12 +70,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - I did not complete this part of the deliverable.
-- [ ] **Navigation elements** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing** - I did not complete this part of the deliverable.
-- [ ] **Application elements** - I did not complete this part of the deliverable.
-- [ ] **Application text content** - I did not complete this part of the deliverable.
-- [ ] **Application images** - I did not complete this part of the deliverable.
+- [x] **Header, footer, and main content body** - Header and footer is consistently and beautifully styled on all 3 pages
+- [x] **Navigation elements** - Links to home, about, and chat in header
+- [x] **Responsive to window resizing** - Media queries on all css files adapting the header and main content to fit a smaller screen size
+- [x] **Application elements** - I used some cards from bootstrap for the about page. The rest of formatting is with various divs and flex view to make box structures
+- [x] **Application text content** - Text is nicely styled and text size adapt to screen size
+- [x] **Application images** - Cosmo hat logo on header, two pictures in the about page
 
 ## 🚀 React part 1: Routing deliverable
 
