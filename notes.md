@@ -155,6 +155,23 @@ We are transferring our project from pure html and css to React. We use the `Bro
 We do this by using **Vite**, which is a software that packages .jsx files that React reads into usable Javascript and CSS that a browser can use. Running the dev command in Vite also allows us to view a http page of the react website (replacement of Live Server when using html in VS Code).
 
 
+First, you must organize your files in a specific way. The index.html file is basically just a default file that has some head information, imports the javascript, and sets up a root div that is linked to the App.jsx file. In the index.jsx file we create that root and link it to the App component. The app component is the default component for React. It is the parent component that covers all other components of your website. 
+
+In the `app.jsx` file, I imported my header and footer html, but instead of main I created a React Routing system by wrapping the entire page in the  `<BrowserRouter>` tag. Then in the place of the <main> tag, I placed the following:
+
+```
+<Routes>
+  <Route path='/' element={<Login />} exact />
+  <Route path='/chat' element={<Chat />} />
+  <Route path='/about' element={<About />} />
+  <Route path='*' element={<NotFound />} />  
+</Routes>
+```
+
+These basically mean that when the page is at that certain link (/, /chat, /about, or any other link), The element displayed in this location will be the output of the function written in each component's jsx file. We had to fix our <a> tags to be `<NavLink>` tabs, which work with the router. Change the `href` element to `to` element, which directs the link to a certain React path that is linked up to the Router. Here's an example: `<NavLink className="nav_links" to="chat">Chat</NavLink>`
+
+Also, we had to make some minor changes when tranfering over, first all `class` elements had to be changed to `className `, the `<body>` tag had to be changed to a `<div className = 'body'>` and the corresponding CSS had to use `.body {` as a selector instead of `body {`.  Also `<img>` tags had to end with a `/>` instead of just a backslash.
+
 
 
 ## React Part 2: Reactivity
