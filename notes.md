@@ -155,7 +155,10 @@ We are transferring our project from pure html and css to React. We use the `Bro
 We do this by using **Vite**, which is a software that packages .jsx files that React reads into usable Javascript and CSS that a browser can use. Running the dev command in Vite also allows us to view a http page of the react website (replacement of Live Server when using html in VS Code).
 
 
-First, you must organize your files in a specific way. The index.html file is basically just a default file that has some head information, imports the javascript, and sets up a root div that is linked to the App.jsx file. In the index.jsx file we create that root and link it to the App component. The app component is the default component for React. It is the parent component that covers all other components of your website. 
+First, you must organize your files in a specific way. The **index.html** file is basically just a default file that has some head information, imports the javascript, and sets up a root div that is linked to the **App.jsx file**. In the index.jsx file we create that root and link it to the App component. The app component is the default component for React. It is the parent component that covers all other components of your website. 
+
+We put our `app.jsx` and `app.css` in the **src** directory. Inside each directory, create a folder for each component with it's own corresponding .jsx and .css files. All images used in the website are placed in the **public** directory.
+
 
 In the `app.jsx` file, I imported my header and footer html, but instead of main I created a React Routing system by wrapping the entire page in the  `<BrowserRouter>` tag. Then in the place of the <main> tag, I placed the following:
 
