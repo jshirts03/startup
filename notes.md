@@ -182,6 +182,35 @@ filter	    Run a function to remove items	                            `a.filter(
 every	      Run a function to test if all items match	                  `a.every(i => i < 3)`
 some	      Run a function to test if any items match	                  `a.some(i => i < 1)`
 
+
+There are also classes and object-oriented programming: Refer to this code block to see a bit of the functionality. The `#` means that it is a private attribute.
+```
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  print() {
+    return 'My name is ' + this.name;
+  }
+}
+
+class Employee extends Person {
+  constructor(name, position) {
+    super(name);
+    this.position = position;
+  }
+
+  print() {
+    return super.print() + '. I am a ' + this.position;
+  }
+}
+
+const e = new Employee('Eich', 'programmer');
+console.log(e.print());
+// OUTPUT: My name is Eich. I am a programmer
+```
+
 ## React Part 1: Routing
 
 We are transferring our project from pure html and css to React. We use the `Browser Router` component along with the `Routes` and `Route` tags to make the webpage routed through React instead of the browser using <a> tags. That is why none of the url's you see in websites ends with .html, because they're using React routing or another similar service.
