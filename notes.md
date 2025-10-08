@@ -147,6 +147,40 @@ We can run javascript in the terminal using Node.js. It runs it in the same way 
 6. Use the code the package provides in your JavaScript
 7. Run your code with node index.js
 
+Javascript uses different types of function notation. First is regular. Here's an example:
+
+```function Hi(name){
+      console.log("Hi " + name)
+  }
+```
+
+The other way is shorthanded version using **arrow functions**. This was a bit tricky, but it seems to be a lot like lambda functions in python. Here's an example from codepen. The code has a function testAll that takes in a function as a parameter, we use the arrow function when we call testAll so we don't have to define another function.
+
+```
+function testAll(input, tester) {
+  const result = input.some(tester)
+  return result
+}
+
+const result = testAll([1,2,3,4,5], (i) => i < 6);
+
+console.log(result);
+```
+
+Some useful functions for modifying arrays:
+Function	  Meaning	                                                    Example
+push	      Add an item to the end of the array	                        `a.push(4)`
+pop	        Remove an item from the end of the array	                  `x = a.pop()`
+slice	      Return a sub-array	                                        `a.slice(1,-1)`
+sort	      Run a function to sort an array in place	                  `a.sort((a,b) => b-a)`
+values	    Creates an iterator for use with a for of loop	            `for (i of a.values()) {...}`
+find	      Find the first item satisfied by a test function	          `a.find(i => i < 2)`
+forEach	    Run a function on each array item	                          `a.forEach(console.log)`
+reduce	    Run a function to reduce each array item to a single item	  `a.reduce((a, c) => a + c)`
+map	        Run a function to map an array to a new array	              `a.map(i => i+i)`
+filter	    Run a function to remove items	                            `a.filter(i => i%2)`
+every	      Run a function to test if all items match	                  `a.every(i => i < 3)`
+some	      Run a function to test if any items match	                  `a.some(i => i < 1)`
 
 ## React Part 1: Routing
 
