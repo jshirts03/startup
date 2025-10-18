@@ -225,6 +225,18 @@ console.log(e.print());
 // OUTPUT: My name is Eich. I am a programmer
 ```
 
+
+**ACTUALLY REALLY IMPORTANT JAVASCRIPT FUNCTIONS**
+
+1) Javascript elements to select an html element (NOT USED IN REACT!) Imperatively change the DOM:
+   - `document.getElementById(id)` will select a certain html element with id
+   - `document.querySelect(selector)` returns the first element that matches a certain CSS selector (element)
+
+2) React uses instead these functions that work declaratively (returning html instead of manipulating existing html)
+   - `useState` creates a variable and a setVariable function that sets the initial value and the function can be used to change that value
+   - `useEffect` used on things that can cause side effects (non html rendering). The first parameter is the code you want to run, the second parameter, the dependency array uses the []. [] alone means only do this once. This prevents the code from running every time the component updates or rerenders.
+
+
 ## React Part 1: Routing
 
 We are transferring our project from pure html and css to React. We use the `Browser Router` component along with the `Routes` and `Route` tags to make the webpage routed through React instead of the browser using <a> tags. That is why none of the url's you see in websites ends with .html, because they're using React routing or another similar service.
