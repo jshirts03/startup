@@ -239,6 +239,18 @@ console.log(e.print());
 
 ## Midterm Prep
 
+**Event listeners**
+ex. element.addEventListener(eventType, callbackFunction);
+
+| Event Type | Triggered When…                     |
+|------------|-------------------------------------|
+| `click`    | User clicks the element             |
+| `input`    | User types into an input field      |
+| `mouseover`| Mouse hovers over the element       |
+| `submit`   | Form is submitted                   |
+| `keydown`  | Key is pressed                      |
+
+
 **Console commands**
 | Command   | Purpose                                           |
 |-----------|---------------------------------------------------|
