@@ -131,6 +131,17 @@ While this code will hide an aside element when the phone is in portrait mode be
 ![BoxImage](https://github.com/webprogramming260/.github/raw/main/profile/css/introduction/cssBoxModel.jpg)
 
 
+
+
+Additional Notes:
+
+Padding!!!
+
+`padding: 10px, 20px` = top+bottom 10px,  left+right 20px
+`padding: 10px, 20px, 15px` = top, left+right, bottom
+`padding: 10px, 15px, 20px, 20px` = top, right, bottom, left
+
+
 ## Javascript
 
 **Javascript is by far the most used programming language in the world.**
