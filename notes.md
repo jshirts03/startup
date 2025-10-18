@@ -271,6 +271,23 @@ Example: banana.fruit.bozo.click
 | `banana`     | **Sub-subdomain** — further subdivision of `fruit.bozo.click` |
 
 
+
+## Http Ports
+
+| Port | Protocol                                                                 |
+|------|--------------------------------------------------------------------------|
+| 20   | File Transfer Protocol (FTP) for data transfer                           |
+| 22   | Secure Shell (SSH) for connecting to remote devices                      |
+| 25   | Simple Mail Transfer Protocol (SMTP) for sending email                   |
+| 53   | Domain Name System (DNS) for looking up IP addresses                     |
+| 80   | Hypertext Transfer Protocol (HTTP) for web requests                      |
+| 110  | Post Office Protocol (POP3) for retrieving email                         |
+| 123  | Network Time Protocol (NTP) for managing time                            |
+| 161  | Simple Network Management Protocol (SNMP) for managing network devices   |
+| 194  | Internet Relay Chat (IRC) for chatting                                   |
+| 443  | HTTP Secure (HTTPS) for secure web requests                              |
+
+
 ## React Part 1: Routing
 
 We are transferring our project from pure html and css to React. We use the `Browser Router` component along with the `Routes` and `Route` tags to make the webpage routed through React instead of the browser using <a> tags. That is why none of the url's you see in websites ends with .html, because they're using React routing or another similar service.
