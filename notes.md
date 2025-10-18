@@ -137,9 +137,9 @@ Additional Notes:
 
 Padding!!!
 
-`padding: 10px, 20px` = top+bottom 10px,  left+right 20px
-`padding: 10px, 20px, 15px` = top, left+right, bottom
-`padding: 10px, 15px, 20px, 20px` = top, right, bottom, left
+`padding: 10px, 20px` = top+bottom 10px,  left+right 20px \n
+`padding: 10px, 20px, 15px` = top, left+right, bottom \n
+`padding: 10px, 15px, 20px, 20px` = top, right, bottom, left \n
 
 
 ## Javascript
