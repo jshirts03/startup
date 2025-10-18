@@ -259,6 +259,18 @@ console.log(e.print());
 | `sudo`    | Run a command with superuser (admin) privileges   |
 
 
+**Domain System**
+
+Example: banana.fruit.bozo.click
+
+| Part         | Role                     |
+|--------------|--------------------------|
+| `click`      | **Top-Level Domain (TLD)** — like `.com`, `.org`, `.click` |
+| `bozo`       | **Root Domain** — the domain you register (`bozo.click`) |
+| `fruit`      | **Subdomain** — subdivision of `bozo.click` |
+| `banana`     | **Sub-subdomain** — further subdivision of `fruit.bozo.click` |
+
+
 ## React Part 1: Routing
 
 We are transferring our project from pure html and css to React. We use the `Browser Router` component along with the `Routes` and `Route` tags to make the webpage routed through React instead of the browser using <a> tags. That is why none of the url's you see in websites ends with .html, because they're using React routing or another similar service.
