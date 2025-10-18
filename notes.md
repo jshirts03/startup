@@ -237,6 +237,27 @@ console.log(e.print());
    - `useEffect` used on things that can cause side effects (non html rendering). The first parameter is the code you want to run, the second parameter, the dependency array uses the []. [] alone means only do this once. This prevents the code from running every time the component updates or rerenders.
 
 
+## Midterm Prep
+
+**Console commands**
+| Command   | Purpose                                           |
+|-----------|---------------------------------------------------|
+| `chmod`   | Change file permissions (e.g., read/write/execute)|
+| `pwd`     | Print current working directory                   |
+| `cd`      | Change directory                                  |
+| `ls`      | List files and directories                        |
+| `vim`     | Open the Vim text editor (powerful, keyboard-driven) |
+| `nano`    | Open the Nano text editor (simpler, beginner-friendly) |
+| `mkdir`   | Make a new directory                              |
+| `mv`      | Move or rename files/directories                  |
+| `rm`      | Remove (delete) files or directories              |
+| `man`     | Show manual/help page for a command               |
+| `ssh`     | Securely connect to another machine (remote login)|
+| `ps`      | Show running processes                            |
+| `wget`    | Download files from the web                       |
+| `sudo`    | Run a command with superuser (admin) privileges   |
+
+
 ## React Part 1: Routing
 
 We are transferring our project from pure html and css to React. We use the `Browser Router` component along with the `Routes` and `Route` tags to make the webpage routed through React instead of the browser using <a> tags. That is why none of the url's you see in websites ends with .html, because they're using React routing or another similar service.
