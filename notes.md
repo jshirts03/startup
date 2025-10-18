@@ -246,6 +246,7 @@ console.log(e.print());
 | `pwd`     | Print current working directory                   |
 | `cd`      | Change directory                                  |
 | `ls`      | List files and directories                        |
+| `ls-la`   | Do ls but with more details                       |
 | `vim`     | Open the Vim text editor (powerful, keyboard-driven) |
 | `nano`    | Open the Nano text editor (simpler, beginner-friendly) |
 | `mkdir`   | Make a new directory                              |
