@@ -8,7 +8,7 @@ import { About } from './about/about';
 import { AuthState } from './login/authState';
 
 export default function App() {
-    const [userName, setUsername] = React.useState(localStorage.getItem('username') || '')
+    const [userName, setUsername] = React.useState(localStorage.getItem('userName') || '')
     const authenticationValue = userName ? AuthState.Authenticated : AuthState.Unauthenticated
     const [authState, setAuthState] = React.useState(authenticationValue)
 
@@ -20,8 +20,9 @@ export default function App() {
                     <div id="link_holder">
                     <div id="links">
                     <NavLink className="nav_links" to="/">Home</NavLink>
-                    <NavLink className="nav_links" to="about">About</NavLink>
-                    {authState === AuthState.Authenticated &&(<NavLink className="nav_links" to="chat">Chat</NavLink>)}
+                    <NavLink className="nav_links" to="/about">About</NavLink>
+                    {authState === AuthState.Authenticated &&
+                    (<NavLink className="nav_links" to="/chat">Chat</NavLink>)}
                     </div>
                     </div>
 
@@ -38,10 +39,10 @@ export default function App() {
 
             <Routes>
                 <Route path='/' element={<Login userName={userName} authState={authState}
-                                            onAuthChange = {(userName, authState) => {
-                                                setUsername(userName); 
-                                                setAuthState(authstate);}
-                                                } />} exact />
+                onAuthChange = {(userName, authState) => {
+                    setUsername(userName); 
+                    setAuthState(authState);}
+                    } />} exact />
                 <Route path='/chat' element={<Chat />} />
                 <Route path='/about' element={<About />} />
                 <Route path='*' element={<NotFound />} />  
