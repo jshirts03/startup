@@ -5,7 +5,6 @@ export function Chat() {
     let [chats, setChats] = React.useState(JSON.parse(localStorage.getItem("chat")) || []);
     let [message, setMessage] = React.useState();
 
-    React.useEffect(() => {console.log("Updated chats:", chats);}, [chats]);
     React.useEffect(() => localStorage.setItem("chat", JSON.stringify(chats)), [chats]);
 
 
