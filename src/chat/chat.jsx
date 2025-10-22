@@ -4,18 +4,24 @@ import './chat.css'
 export function Chat() {
     let [chats, setChats] = React.useState(JSON.parse(localStorage.getItem("chat")) || []);
     let [message, setMessage] = React.useState();
+    let [sent, setSent] = React.useState(parseInt(localStorage.getItem("sent")) || 0)
 
     React.useEffect(() => localStorage.setItem("chat", JSON.stringify(chats)), [chats]);
+    React.useEffect(() => localStorage.setItem("sent", sent), [sent]);
+    React.useEffect(() => {
+    setInterval(() => {
+  // This will be replaced with WebSocket messages
+    const userName = `User-${Math.floor(Math.random() * 100)}`;
+    sendMessage(userName, "Go COUGS!!");
+        }, 3000)}, []);
 
 
-    function sendMessage(message){
-        let userName = localStorage.getItem("userName")
+    function sendMessage(userName, message){
         let chat = {name: userName, message: message}
         if (chats.length === 10){
             chats.pop()
         }
         setChats((chats) => [chat, ...chats])
-        localStorage.setItem("chat", JSON.stringify(chats))
     }
 
   return (
@@ -62,14 +68,14 @@ export function Chat() {
                         <input type="text" name="message" placeholder="go cougs!!" onChange={(e) => setMessage(e.target.value)}/>
                     </div>
                     <div id="button">
-                        <button type="submit" onClick={(e) => {e.preventDefault(); sendMessage(message);}}>Send</button>
+                        <button type="submit" onClick={(e) => {e.preventDefault(); sendMessage(localStorage.getItem("userName"), message); setSent(sent+1)}}>Send</button>
                     </div>
                 </form>
             </div>
             <div className="blank"></div>
         </div>
         <div>
-            <p>Messages sent: number (This will be recalled from memory and added to every time a message is sent)</p>
+            <p>Messages sent: {sent} </p>
         </div>
     </main>
   );
