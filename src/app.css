@@ -56,6 +56,7 @@ nav{
 
 #blank {
     flex: 0.333;
+    text-align: right;
 }
 
 
@@ -155,6 +156,9 @@ footer {
     flex: 0.1;
   }
   #login{
-    flex: 0.8
+    flex: 0.8;
+  }
+  #blank{
+    text-align: center;
   }
 }

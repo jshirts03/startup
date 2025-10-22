@@ -32,7 +32,9 @@ export default function App() {
                         <img src="images/comsohat.png"/>
                     </div>
                     <div id="blank">
-                        <p></p>
+                        {authState === AuthState.Authenticated &&(
+                            <p>Hello! {localStorage.getItem('userName')}</p>
+                        )}
                     </div>
                 </nav>
             </header>
