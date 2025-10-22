@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 
-export function Unauthenticated(userName, onLogin) {
+export function Unauthenticated({userName, onLogin}) {
     const [loginUsername, setLoginUsername] = React.useState('');
     const [loginPassword, setLoginPassword] = React.useState('');
     let navigate = useNavigate();
