@@ -8,9 +8,9 @@ export function Chat() {
 
     React.useEffect(() => localStorage.setItem("chat", JSON.stringify(chats)), [chats]);
     React.useEffect(() => localStorage.setItem("sent", sent), [sent]);
+    // This will be replaced with WebSocket messages
     React.useEffect(() => {
     setInterval(() => {
-  // This will be replaced with WebSocket messages
     const userName = `User-${Math.floor(Math.random() * 100)}`;
     sendMessage(userName, "Go COUGS!!");
         }, 3000)}, []);
@@ -18,12 +18,10 @@ export function Chat() {
 
     function sendMessage(userName, message){
         let chat = {name: userName, message: message}
-        if (chats.length === 10){
-            chats.pop()
-        }
-        setChats((chats) => [chat, ...chats])
+        //says that if the chats was greater than or equal to 10 mesages, it will slice it into only its first 10 elements (like trimmed = chats[:9])
+        setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];});
     }
-
+    
   return (
     <main className="container-fluid">
         <h1>ROC CHAT</h1>
