@@ -7,6 +7,7 @@ export function Authenticated({userName, onLogout}){
 
     function logout() {
         localStorage.removeItem('userName');
+        localStorage.removeItem('sent')
         onLogout();
     }
 
