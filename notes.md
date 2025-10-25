@@ -354,3 +354,28 @@ Handling the toggling of the checkboxes was particularly interesting.
   ))}
 </div>
 ```
+
+
+## Servers Run Through Node.js (Express)
+
+
+A REST API is the standard form or server client communcation. You can create your own API by hosting it on Node.js and using the Express package. Start a new Node project using `npm init -y`, then install express by running `npm install express`. Then create a index.js file and include the following code:
+
+```const express = require('express');
+const app = express();
+
+app.listen(8080);```
+
+This creates a new server that is listening on port 8080! You can see this in the browser by first running  `node .` and then going to localhost/8080.
+
+```app.get('/store/provo', (req, res, next) => {
+  res.send({ name: 'provo' });
+});```
+
+You can then define endpoints in express. This is how you handle requests to your server. For example, a javascript function in front end might say `fetch('/store/provo')` with a GET request. The API will then receive that request and send back a JSON object with the name property as "Provo".
+
+BUT, Express isn't built to automatically parse JSON data, so we have to use what's called **middleware**. Middleware is code that runs every time ANY request is given. It doesn't matter what type or what path. For example, we can put the following code.
+
+```express.use(express.json())```
+
+This will automatically parse any JSON data sent in any request, which we can then access in the req.body. 
