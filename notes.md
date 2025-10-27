@@ -386,7 +386,7 @@ This will automatically parse any JSON data sent in any request, which we can th
 
 ## Using Multer
 
-# HTML
+### HTML
 ```
 <html lang="en">
   <body>
@@ -400,7 +400,7 @@ This will automatically parse any JSON data sent in any request, which we can th
 </html>
 ```
 
-# Frontend
+### Frontend
 ```
 async function uploadFile(fileInput) {
   const file = fileInput.files[0];
@@ -423,7 +423,7 @@ async function uploadFile(fileInput) {
 }
 ```
 
-# Backend
+### Backend
 ```
 const express = require('express');
 const multer = require('multer');
