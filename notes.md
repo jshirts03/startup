@@ -383,3 +383,88 @@ BUT, Express isn't built to automatically parse JSON data, so we have to use wha
 `express.use(express.json())`
 
 This will automatically parse any JSON data sent in any request, which we can then access in the req.body. 
+
+## Using Multer
+
+# HTML
+```
+<html lang="en">
+  <body>
+    <h1>Upload an image</h1>
+    <input type="file" id="fileInput" name="file" accept=".png, .jpeg, .jpg" onchange="uploadFile(this)" />
+    <div>
+      <img style="padding: 2em 0" id="upload" />
+    </div>
+    <script defer src="frontend.js"></script>
+  </body>
+</html>
+```
+
+# Frontend
+```
+async function uploadFile(fileInput) {
+  const file = fileInput.files[0];
+  if (file) {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const response = await fetch('/upload', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      document.querySelector('#upload').src = `/${data.file}`;
+    } else {
+      alert(data.message);
+    }
+  }
+}
+```
+
+# Backend
+```
+const express = require('express');
+const multer = require('multer');
+
+const app = express();
+
+app.use(express.static('public'));
+
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: 'public/',
+    filename: (req, file, cb) => {
+      const filetype = file.originalname.split('.').pop();
+      const id = Math.round(Math.random() * 1e9);
+      const filename = `${id}.${filetype}`;
+      cb(null, filename);
+    },
+  }),
+  limits: { fileSize: 64000 },
+});
+
+app.post('/upload', upload.single('file'), (req, res) => {
+  if (req.file) {
+    res.send({
+      message: 'Uploaded succeeded',
+      file: req.file.filename,
+    });
+  } else {
+    res.status(400).send({ message: 'Upload failed' });
+  }
+});
+
+app.use((err, req, res, next) => {
+  if (err instanceof multer.MulterError) {
+    res.status(413).send({ message: err.message });
+  } else {
+    res.status(500).send({ message: err.message });
+  }
+});
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+```
