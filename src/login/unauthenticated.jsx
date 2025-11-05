@@ -52,8 +52,8 @@ export function Unauthenticated({userName, onLogin}) {
                     <span>Password</span> <input type="password" onChange={(e) => {setLoginPassword(e.target.value)}} placeholder="your password here" />
                 </div>
                 <div id="buttons">
-                    <button type="submit" onClick={() => Login()} disabled={!userName || !password}>Login</button>
-                    <button type="submit" onClick={() => CreateUser()} disabled={!userName || !password}>Create</button>
+                    <button type="submit" onClick={() => Login()} disabled={!loginUsername || !loginPassword}>Login</button>
+                    <button type="submit" onClick={() => CreateUser()} disabled={!loginUsername || !loginPassword}>Create</button>
                 </div>
         </div>
         </div>

@@ -6,7 +6,7 @@ export function Authenticated({userName, onLogout}){
     const navigate = useNavigate();
 
     async function logout() {
-        await fetch(`api/auth/delete`, {
+        await fetch(`api/auth/logout`, {
             method: "delete",
         })
         .catch(() => {

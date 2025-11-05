@@ -1,9 +1,13 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig({
+export default {
   server: {
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
-});
+};

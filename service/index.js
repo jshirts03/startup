@@ -35,7 +35,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 });
 
 //Looks up the user by email in our array of users. Hashes the password and compares to the hashed password on file. If they match, create a new token and send back a cookie with that token
-apiRouter.post('auth/login', async (req,res) => {
+apiRouter.post('/auth/login', async (req,res) => {
     const user = await findUser('email', req.body.email);
     if (user){
         if (await bcrypt.compare(req.body.password, user.password)){
@@ -49,13 +49,13 @@ apiRouter.post('auth/login', async (req,res) => {
 });
 
 //removes the token cookie from the browser, causing the user to no longer be able to access any functions that require being logged in (verify middleware below)
-apiRouter.delete("auth/logout", async (req, res) => {
-    const user = await findUser('email', req.body.email)
-    if (user){
-        delete user.token;
-    }
-    res.clearCookie(authCookieName);
-    res.status(204).end();
+apiRouter.delete('/auth/logout', async (req, res) => {
+  const user = await findUser('token', req.cookies[authCookieName]);
+  if (user) {
+    delete user.token;
+  }
+  res.clearCookie(authCookieName);
+  res.status(204).end();
 });
 
 
