@@ -89,8 +89,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **All functionality implemented or mocked out** - I did not complete this part of the deliverable.
-- [ ] **Hooks** - I did not complete this part of the deliverable.
+- [X] **All functionality implemented or mocked out** - Some placeholder stuff for API call in the About component. Login authentication works, remembers your name in localStorage. setInterval loop used to simulate incoming messages from other users. Messages sent counter updates each time a user sends a message. Messages display correctly with the username and message! This was actually really fun and I have a lot more that I want to do with this. 
+- [X] **Hooks** - useState and useEffect are used in all my jsx files.
 
 ## 🚀 Service deliverable
 
