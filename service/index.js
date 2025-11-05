@@ -1,7 +1,7 @@
-const express = requre('express');
+const express = require('express');
 const cookieParser = require('cookie-parser');
-const bcrypt = require('bcrypt');
-const uuid = requre('uuid');
+const bcrypt = require('bcryptjs');
+const uuid = require('uuid');
 const app = express();
 
 const authCookieName = 'token';
@@ -22,7 +22,7 @@ var apiRouter = express.Router();
 app.use("/api", apiRouter);
 
 //When creating a new user, if there's already a user then it will send back an error, else it will create a new user and create a cookie with that user's token
-apiRouter.post("/auth/create", async (req, res) => {
+apiRouter.post('/auth/create', async (req, res) => {
     if (await findUser('email', req.body.email)){
         res.status(409).send({msg: "Existing user"});
     }
@@ -35,7 +35,7 @@ apiRouter.post("/auth/create", async (req, res) => {
 });
 
 //Looks up the user by email in our array of users. Hashes the password and compares to the hashed password on file. If they match, create a new token and send back a cookie with that token
-apiRouter.post("auth/login", async (req,res) => {
+apiRouter.post('auth/login', async (req,res) => {
     const user = await findUser('email', req.body.email);
     if (user){
         if (await bcrypt.compare(req.body.password, user.password)){

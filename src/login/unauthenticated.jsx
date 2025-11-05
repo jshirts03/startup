@@ -8,16 +8,32 @@ export function Unauthenticated({userName, onLogin}) {
     let navigate = useNavigate();
 
     async function Login(){
-        localStorage.setItem('userName', loginUsername);
-        onLogin(loginUsername);
-        navigate('/chat');
+        loginOrCreate(`/api/auth/login`);
     }
 
     async function CreateUser(){
-        localStorage.setItem('userName', loginUsername);
-        onLogin(loginUsername);
-        navigate('/chat');
+        loginOrCreate(`api/auth/create`);
     }
+
+    async function loginOrCreate(request){
+        const response = await fetch(request, {
+            method: 'post',
+            body: JSON.stringify({email: loginUsername, password: loginPassword} ),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        });
+        if (response?.status === 200) {
+            localStorage.setItem('userName', loginUsername);
+            onLogin(loginUsername);
+            navigate('/chat');
+        }
+        else{
+            const error = await response.json();
+            console.log(`Error! ${error.msg}`);
+        }
+    }
+
 
     return (
     <main className="container-fluid">
@@ -37,7 +53,7 @@ export function Unauthenticated({userName, onLogin}) {
                 </div>
                 <div id="buttons">
                     <button type="submit" onClick={() => Login()}>Login</button>
-                    <button type="submit">Create</button>
+                    <button type="submit" onClick={() => CreateUser()}>Create</button>
                 </div>
         </div>
         </div>
