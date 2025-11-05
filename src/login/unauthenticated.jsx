@@ -49,11 +49,11 @@ export function Unauthenticated({userName, onLogin}) {
                     <span id="email_label">Email</span><input type="text" onChange={(e) => {setLoginUsername(e.target.value)}}placeholder="your email here" />
                 </div>
                 <div id="password">
-                    <span>Password</span> <input type="text" onChange={(e) => {setLoginPassword(e.target.value)}} placeholder="your password here" />
+                    <span>Password</span> <input type="password" onChange={(e) => {setLoginPassword(e.target.value)}} placeholder="your password here" />
                 </div>
                 <div id="buttons">
-                    <button type="submit" onClick={() => Login()}>Login</button>
-                    <button type="submit" onClick={() => CreateUser()}>Create</button>
+                    <button type="submit" onClick={() => Login()} disabled={!userName || !password}>Login</button>
+                    <button type="submit" onClick={() => CreateUser()} disabled={!userName || !password}>Create</button>
                 </div>
         </div>
         </div>

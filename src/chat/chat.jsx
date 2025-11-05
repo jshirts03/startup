@@ -20,6 +20,7 @@ export function Chat() {
         let chat = {name: userName, message: message}
         //says that if the chats was greater than or equal to 10 mesages, it will slice it into only its first 10 elements (like trimmed = chats[:9])
         setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];});
+        setMessage("");
     }
     
   return (
