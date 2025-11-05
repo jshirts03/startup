@@ -56,11 +56,11 @@ apiRouter.delete("auth/logout", async (req, res) => {
     }
     res.clearCookie(authCookieName);
     res.status(204).end();
-})
+});
 
 
 //Middleware that allows you to check and see if a user is logged in (aka has a token stored in cookies) we don't use app.use because that will make all functions require this
-const verifyAuth = async (req, res, next){
+const verifyAuth = async (req, res, next) => {
     const user = findUser('token', req.cookies[authCookieName]);
     if (user){
         next();
