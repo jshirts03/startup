@@ -11,10 +11,10 @@ let users = [];
 let messages = [];
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 app.use(express.json())
-
+app.use(express.static('public'));
 app.use(cookieParser());
 
 //This basically takes any requests that start with /api and send them to the apiRouter. That way we don't have to repeatedly type "/api"
