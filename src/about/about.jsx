@@ -2,13 +2,23 @@ import React from 'react';
 import './about.css'
 
 export function About() {
-    const [quote, setQuote] = React.useState("loading...")
-    const [author, setAuthor] = React.useState("loading...")
+    const [joke, setJoke] = React.useState("loading...")
 
     React.useEffect(() => {
-        setQuote('Jesus Loves You');
-        setAuthor('Jonah Shirts');
+        getJoke();
       }, []);
+
+    async function getJoke(){
+        fetch("https://icanhazdadjoke.com/", {
+            headers:
+                {
+                    'Accept': "application/json"
+                }
+        })
+        .then((response) => response.json())
+        .then((response) => {setJoke(response.joke)})
+        .catch((error) => {console.log("There was an error", error)})
+    }
 
   return (
     <main>
@@ -40,8 +50,8 @@ export function About() {
         <section id="quotes">
             <h4>In case of a BYU loss</h4>
             <h6>Read ONLY if BYU loses</h6>
-            <p>It's ok, you can't win 'em all. Maybe this motivational quote will help.</p>
-            <p>"{quote}" -{author}</p>
+            <p>It's ok, you can't win 'em all. Maybe this dad joke will help.</p>
+            <p>"{joke}"</p>
         </section>
     </main>
   );
