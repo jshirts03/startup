@@ -2,13 +2,13 @@ import React from 'react';
 import './chat.css'
 
 export function Chat() {
-    let [chats, setChats] = React.useState(JSON.parse(localStorage.getItem("chat")) || []);
+    let [chats, setChats] = React.useState([]);
     let [message, setMessage] = React.useState();
     let [sent, setSent] = React.useState(parseInt(localStorage.getItem("sent")) || 0)
 
-    React.useEffect(() => localStorage.setItem("chat", JSON.stringify(chats)), [chats]);
     React.useEffect(() => localStorage.setItem("sent", sent), [sent]);
     // This will be replaced with WebSocket messages
+
     React.useEffect(() => {
     setInterval(() => {
     const userName = `User-${Math.floor(Math.random() * 100)}`;
@@ -16,10 +16,28 @@ export function Chat() {
         }, 3000)}, []);
 
 
-    function sendMessage(userName, message){
+    React.useEffect(() => {
+        getChats();
+    }, [])
+
+    async function getChats(){
+        const chats = await fetch ('api/chats');
+        const parsed_chats = await chats.json();
+        setChats(parsed_chats);
+        console.log(parsed_chats)
+    }
+
+    async function sendMessage(userName, message){
         let chat = {name: userName, message: message}
+        await fetch('api/send', {
+            method: 'post',
+            body: JSON.stringify(chat),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        }).then(getChats())
         //says that if the chats was greater than or equal to 10 mesages, it will slice it into only its first 10 elements (like trimmed = chats[:9])
-        setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];});
+        //setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];});
     }
     
   return (

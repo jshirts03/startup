@@ -8,7 +8,7 @@ const authCookieName = 'token';
 
 //gonna store the users and the last 10 messages in the server now instead of local storage
 let users = [];
-let messages = [];
+let chats = [];
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -16,9 +16,6 @@ const port = process.argv.length > 2 ? process.argv[2] : 4000;
 app.use(express.json())
 app.use(express.static('public'));
 app.use(cookieParser());
-app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' });
-});
 
 //This basically takes any requests that start with /api and send them to the apiRouter. That way we don't have to repeatedly type "/api"
 var apiRouter = express.Router();
@@ -61,7 +58,6 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   res.status(204).end();
 });
 
-
 //Middleware that allows you to check and see if a user is logged in (aka has a token stored in cookies) we don't use app.use because that will make all functions require this
 const verifyAuth = async (req, res, next) => {
     const user = findUser('token', req.cookies[authCookieName]);
@@ -73,7 +69,19 @@ const verifyAuth = async (req, res, next) => {
     }
 }
 
+apiRouter.get('/chats', verifyAuth, async (req, res) => {
+    res.json(chats)
+})
 
+
+apiRouter.post('/send', verifyAuth, async (req, res) => {
+    updateChats(req.body, res)
+})
+
+
+app.use((_req, res) => {
+  res.sendFile('index.html', { root: 'public' });
+});
 
 //checks our users array and returns the user that matches the field and value (if login or create is searches by email)
 function findUser(field, value){
@@ -105,6 +113,21 @@ function setAuthCookie(res, token){
         sameSite: 'strict',  //only can be retrieved from requests on this website
     }
     )
+}
+
+function updateChats(chat, res){
+    if (chat) {
+        if (chats.length >= 10){
+            const trimmed = chats.slice(0, 9);
+            chats = [chat, ...trimmed];
+        }
+        else{
+            chats = [chat, ...chats];
+        }
+    }
+    else{
+        res.status(404).send({msg: "Nothing to send"});
+    }
 }
 
 
