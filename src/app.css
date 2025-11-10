@@ -95,6 +95,10 @@ main .form{
     padding-bottom: 10px;
 }
 
+#error{
+    color: rgb(233, 114, 114)
+}
+
 
 
 #email_label{

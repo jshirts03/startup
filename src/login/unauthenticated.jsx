@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 export function Unauthenticated({userName, onLogin}) {
     const [loginUsername, setLoginUsername] = React.useState('');
     const [loginPassword, setLoginPassword] = React.useState('');
+    const [errorMessage, setErrorMessage] = React.useState("");
     let navigate = useNavigate();
 
     async function Login(){
@@ -26,11 +27,12 @@ export function Unauthenticated({userName, onLogin}) {
         if (response?.status === 200) {
             localStorage.setItem('userName', loginUsername);
             onLogin(loginUsername);
+            setErrorMessage("")
             navigate('/chat');
         }
         else{
             const error = await response.json();
-            console.log(`Error! ${error.msg}`);
+            setErrorMessage(`Error! ${error.msg}`);
         }
     }
 
@@ -50,6 +52,9 @@ export function Unauthenticated({userName, onLogin}) {
                 </div>
                 <div id="password">
                     <span>Password</span> <input type="password" onChange={(e) => {setLoginPassword(e.target.value)}} placeholder="your password here" />
+                </div>
+                <div id="error">
+                    <p>{errorMessage}</p>
                 </div>
                 <div id="buttons">
                     <button type="submit" onClick={() => Login()} disabled={!loginUsername || !loginPassword}>Login</button>
