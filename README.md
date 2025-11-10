@@ -96,12 +96,14 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
+- [X] **Node.js/Express HTTP service** - Node/Express backend service found in the service directory
+- [X] **Static middleware for frontend** - Static middleware found in the index.js of service
+- [X] **Calls to third party endpoints** - Display a dad joke from the dad jokes API in the about page
+- [X] **Backend service endpoints** - Endpoints for creating a user, logging in, and logging out
+- [X] **Frontend calls service endpoints** - Login, Create, and Logout buttons call service endpoints
+- [X] **Supports registration, login, logout, and restricted endpoint** - YEP!
+
+*I completed all the requirements but I want to do some more things.(Store chats in server instead of localstorage, store messages sent in server instead of resetting every time, etc.) Ran out of time though hahah. I'll work on them this week
 
 
 ## 🚀 DB deliverable
