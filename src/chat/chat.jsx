@@ -21,10 +21,12 @@ export function Chat() {
     }, [])
 
     async function getChats(){
-        const chats = await fetch ('api/chats');
+        const chats = await fetch ('api/chats', {
+            credentials: "include",
+        });
         const parsed_chats = await chats.json();
         setChats(parsed_chats);
-        console.log(parsed_chats)
+        console.log(parsed_chats);
     }
 
     async function sendMessage(userName, message){
@@ -34,8 +36,10 @@ export function Chat() {
             body: JSON.stringify(chat),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
-            }
-        }).then(getChats())
+            },
+            credentials: "include",
+        });
+        await getChats();
         //says that if the chats was greater than or equal to 10 mesages, it will slice it into only its first 10 elements (like trimmed = chats[:9])
         //setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];});
     }
