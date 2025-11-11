@@ -4,9 +4,8 @@ import './chat.css'
 export function Chat() {
     let [chats, setChats] = React.useState([]);
     let [message, setMessage] = React.useState();
-    let [sent, setSent] = React.useState(parseInt(localStorage.getItem("sent")) || 0)
+    let [sent, setSent] = React.useState(0)
 
-    React.useEffect(() => localStorage.setItem("sent", sent), [sent]);
     // This will be replaced with WebSocket messages
 
     React.useEffect(() => {
@@ -18,7 +17,18 @@ export function Chat() {
 
     React.useEffect(() => {
         getChats();
+        updateSent();
     }, [])
+
+
+    async function updateSent() {
+        const number = await fetch('api/get/sent', {
+            credentials: "include",
+        })
+        const parsed_number = await number.json()
+        setSent(parsed_number.sent);
+    }
+
 
     async function getChats(){
         const chats = await fetch ('api/chats', {
@@ -40,6 +50,7 @@ export function Chat() {
             credentials: "include",
         });
         await getChats();
+        await updateSent();
         //says that if the chats was greater than or equal to 10 mesages, it will slice it into only its first 10 elements (like trimmed = chats[:9])
         //setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];});
     }
@@ -88,7 +99,7 @@ export function Chat() {
                         <input type="text" name="message" placeholder="go cougs!!" onChange={(e) => setMessage(e.target.value)}/>
                     </div>
                     <div id="button">
-                        <button type="submit" onClick={(e) => {e.preventDefault(); sendMessage(localStorage.getItem("userName"), message); setSent(sent+1)}}>Send</button>
+                        <button type="submit" onClick={(e) => {e.preventDefault(); sendMessage(localStorage.getItem("userName"), message);}}>Send</button>
                     </div>
                 </form>
             </div>

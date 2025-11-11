@@ -73,8 +73,15 @@ apiRouter.get('/chats', verifyAuth, async (req, res) => {
     res.json(chats)
 })
 
+apiRouter.get('/get/sent', verifyAuth, async (req, res) => {
+    const user = findUser('token', req.cookies[authCookieName]);
+    let number = user.sent
+    res.json({sent: number})
+})
 
 apiRouter.post('/send', verifyAuth, async (req, res) => {
+    const user = findUser('token', req.cookies[authCookieName]);
+    user.sent += 1
     updateChats(req.body, res)
 })
 
@@ -98,7 +105,8 @@ async function createUser(email, password){
     const user = {
         "email" : email,
         "password" : newPassword,
-        'token' : uuid.v4()
+        'token' : uuid.v4(),
+        "sent" : 0
     };
     users.push(user)
     return user
@@ -115,7 +123,7 @@ function setAuthCookie(res, token){
     )
 }
 
-function updateChats(chat, res){
+async function updateChats(chat, res){
     if (chat) {
         if (chats.length >= 10){
             const trimmed = chats.slice(0, 9);
