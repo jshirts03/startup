@@ -61,7 +61,7 @@ apiRouter.delete('/auth/logout', async (req, res) => {
 
 //Middleware that allows you to check and see if a user is logged in (aka has a token stored in cookies) we don't use app.use because that will make all functions require this
 const verifyAuth = async (req, res, next) => {
-    const user = findUser('token', req.cookies[authCookieName]);
+    const user = await findUser('token', req.cookies[authCookieName]);
     if (user){
         next();
     }
@@ -76,15 +76,16 @@ apiRouter.get('/chats', verifyAuth, async (req, res) => {
 })
 
 apiRouter.get('/get/sent', verifyAuth, async (req, res) => {
-    const user = findUser('token', req.cookies[authCookieName]);
+    const user = await findUser('token', req.cookies[authCookieName]);
     let number = user.sent
     res.json({sent: number})
 })
 
 apiRouter.post('/send', verifyAuth, async (req, res) => {
-    const user = findUser('token', req.cookies[authCookieName]);
+    const user = await findUser('token', req.cookies[authCookieName]);
+    console.log(user.sent)
     user.sent += 1
-    DB.updateUser(user)
+    await DB.updateUser(user)
     updateChats(req.body, res)
 })
 

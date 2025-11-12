@@ -45,8 +45,8 @@ async function getChats() {
     limit: 10
   }
   const chats = await chatCollection.find({},options)
-  const array = chats.toarray()
-  return array.reverse()
+  const array = await chats.toArray()
+  return array
 }
 
 
