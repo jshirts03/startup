@@ -110,8 +110,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
+- [X] **Stores data in MongoDB** - The last 10 chats are stored in the DB, also the number of messages sent for each user is also stored in DB.
+- [X] **Stores credentials in MongoDB** - Credentials stored in DB! This was super cool
 
 ## 🚀 WebSocket deliverable
 
