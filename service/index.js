@@ -80,7 +80,6 @@ apiRouter.get('/get/sent', verifyAuth, async (req, res) => {
 
 apiRouter.post('/send', verifyAuth, async (req, res) => {
     const user = await findUser('token', req.cookies[authCookieName]);
-    console.log(user.sent)
     user.sent += 1
     await DB.updateUser(user)
     updateChats(req.body, res)

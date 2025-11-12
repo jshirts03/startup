@@ -36,7 +36,6 @@ export function Chat() {
         });
         const parsed_chats = await chats.json();
         setChats(parsed_chats);
-        console.log(parsed_chats);
     }
 
     async function sendMessage(userName, message){

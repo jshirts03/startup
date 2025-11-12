@@ -46,7 +46,14 @@ async function getChats() {
   }
   const chats = await chatCollection.find({},options)
   const array = await chats.toArray()
+  if (array.length >= 10){
+    deleteOldChats(array[9])
+  }
   return array
+}
+
+async function deleteOldChats(chat){
+  await chatCollection.deleteMany({ _id: {$lt: chat._id}})
 }
 
 
