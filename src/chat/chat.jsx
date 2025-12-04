@@ -39,6 +39,7 @@ export function Chat() {
 
 //FRONT END   set up a websocket connection to my backend websocket. 2 event handlers: onmessage and 
 
+useEffect(() => {
     let port = window.location.port;
         const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
         socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
@@ -59,6 +60,13 @@ export function Chat() {
             setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];})
         } catch {}
         };
+
+    return () => {
+        if (socket) {
+            socket.close();
+        }
+    };
+}, []);
 
 
 

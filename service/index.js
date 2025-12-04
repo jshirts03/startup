@@ -145,7 +145,7 @@ async function updateChats(chat, res){
 }
 
 
-httpService = app.listen(port, () => {
+const httpService = app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
 
