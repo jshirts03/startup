@@ -117,8 +117,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [X] **Backend listens for WebSocket connection** - Listening for Websocket connection using the wsServer.js file
+- [X] **Frontend makes WebSocket connection** - Listens for Websocket connection insidethe chat.jsx file
+- [X] **Data sent over WebSocket connection** - Yes! My chats are sent over Websocket. ALso a JOINED message is sent when a user joins the chat room
+- [X] **WebSocket data displayed** - Chats are displayed in real time on the chat screen
+- [X] **Application is fully functional** - It works! it works, it works, it works! Lets goooooo! I'm so happy this part was challenging but cool.
