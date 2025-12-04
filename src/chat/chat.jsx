@@ -5,22 +5,16 @@ export function Chat() {
     let [chats, setChats] = React.useState([]);
     let [message, setMessage] = React.useState();
     let [sent, setSent] = React.useState(0)
-
-    // This will be replaced with WebSocket messages
-
-    React.useEffect(() => {
-    setInterval(() => {
-    const userName = `User-${Math.floor(Math.random() * 100)}`;
-    sendMessage(userName, "Go COUGS!!");
-        }, 3000)}, []);
-
-
+    
+// Initially gets the user chat count, and the 10 most recent chats
     React.useEffect(() => {
         getChats();
         updateSent();
     }, [])
 
 
+
+//Function that sends request to server to get the number of items sent (includes cookies so server knows the user info)
     async function updateSent() {
         const number = await fetch('api/get/sent', {
             credentials: "include",
@@ -30,6 +24,7 @@ export function Chat() {
     }
 
 
+//Gets the most recent chats from the backend server (DB). ONLY CALLED ONCE AT THE BEGINNING TO DISPLAY HISTORY 
     async function getChats(){
         const chats = await fetch ('api/chats', {
             credentials: "include",
@@ -38,6 +33,31 @@ export function Chat() {
         setChats(parsed_chats);
     }
 
+
+
+
+//FRONT END   set up a websocket connection to my backend websocket. 2 event handlers: onmessage and 
+
+    let port = window.location.port;
+        const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+        socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+        socket.onopen = (event) => {
+         //Send a message into the chat titled "Username, joined"
+        };
+        this.socket.onclose = (event) => {
+         //Send a message into the chat titled "Username, left"
+        };
+        this.socket.onmessage = async (msg) => {
+        try {
+            //turn message into readable elements
+            //then set chats to include message as the first element of the array
+        } catch {}
+        };
+
+
+
+
+//Sends that message to the DB to be stored in chat history, updates the sent counter
     async function sendMessage(userName, message){
         let chat = {name: userName, message: message}
         await fetch('api/send', {
@@ -48,11 +68,12 @@ export function Chat() {
             },
             credentials: "include",
         });
-        await getChats();
+        //instead of getting from the DB/server, I'll just add this to my local chats and send a websocket message to all the other groups in the same way, but update the DB
         await updateSent();
         //says that if the chats was greater than or equal to 10 mesages, it will slice it into only its first 10 elements (like trimmed = chats[:9])
         //setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];});
     }
+    
     
   return (
     <main className="container-fluid">

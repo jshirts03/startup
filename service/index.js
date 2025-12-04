@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 const app = express();
 const DB = require('./database.js');
+const { peerProxy } = require('./wsServer.js');
 
 const authCookieName = 'token';
 
@@ -78,12 +79,18 @@ apiRouter.get('/get/sent', verifyAuth, async (req, res) => {
     res.json({sent: number})
 })
 
+
+//Adds a chat to the DB for chat storage, updates user sent in DB
 apiRouter.post('/send', verifyAuth, async (req, res) => {
     const user = await findUser('token', req.cookies[authCookieName]);
     user.sent += 1
     await DB.updateUser(user)
     updateChats(req.body, res)
 })
+
+
+//BACKEND-   need to create websocket upgrade. TO send function that will send the message to all clients, to be displayed in their React "chats" arrays
+//           plus a ping and pong to keep conections alive as needed
 
 
 app.use((_req, res) => {
@@ -126,6 +133,7 @@ function setAuthCookie(res, token){
     )
 }
 
+//Adds a chat to the DB chat storage
 async function updateChats(chat, res){
     if (chat) {
         await DB.addChat(chat)
@@ -137,6 +145,8 @@ async function updateChats(chat, res){
 }
 
 
-app.listen(port, () => {
+httpService = app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
