@@ -6,6 +6,8 @@ export function Chat() {
     let [message, setMessage] = React.useState();
     let [sent, setSent] = React.useState(0);
     let [status, setStatus] = React.useState("disconnected");
+    const socketRef = React.useRef(null);
+    let userName = localStorage.getItem("userName")
     
 // Initially gets the user chat count, and the 10 most recent chats
     React.useEffect(() => {
@@ -37,36 +39,39 @@ export function Chat() {
 
 
 
-//FRONT END   set up a websocket connection to my backend websocket. 2 event handlers: onmessage and 
+//FRONT END   set up a websocket connection to my backend websocket. 2 event handlers: onmessage, onopen, and onclose
 
-useEffect(() => {
-    let port = window.location.port;
-        const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-        socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
-        socket.onopen = (event) => {
-            let message = {name: userName, message: "JOINED"}
-            socket.send(JSON.stringify(message))
-            setStatus("connected")
-        };
-        socket.onclose = (event) => {
-         //Send a message into the chat titled "Username, left"
-            setStatus("disconnected")
-        };
-        socket.onmessage = async (msg) => {
-        try {
-            //turn message into readable elements
-            //then set chats to include message as the first element of the array
-            message = JSON.parse(msg.data)
-            setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];})
-        } catch {}
-        };
+    React.useEffect(() => {
+        let port = window.location.port;
+            const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+            const socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+            socketRef.current = socket
+            socket.onopen = (event) => {
+                let message = {name: userName, message: "JOINED"}
+                socket.send(JSON.stringify(message))
+                setStatus("connected")
+            };
+            socket.onclose = (event) => {
+            //Send a message into the chat titled "Username, left"
+                setStatus("disconnected")
+            };
+            socket.onmessage = async (msg) => {
+            try {
+                //turn message into readable elements
+                //then set chats to include message as the first element of the array
+                let message = JSON.parse(msg.data)
+                setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [message, ...trimmed];})
+            } catch {
+                console.log('an error occurred')
+            }
+            };
 
-    return () => {
-        if (socket) {
-            socket.close();
-        }
-    };
-}, []);
+        return () => {
+            if (socket) {
+                socket.close();
+            }
+        };
+    }, []);
 
 
 
@@ -84,7 +89,7 @@ useEffect(() => {
         });
         //instead of getting from the DB/server, I'll just add this to my local chats and send a websocket message to all the other groups in the same way, but update the DB
         setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];})
-        socket.send(JSON.stringify(chat))
+        socketRef.current.send(JSON.stringify(chat))
         await updateSent();
         //says that if the chats was greater than or equal to 10 mesages, it will slice it into only its first 10 elements (like trimmed = chats[:9])
         //setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [chat, ...trimmed];});
@@ -94,7 +99,7 @@ useEffect(() => {
   return (
     <main className="container-fluid">
         <h1>ROC CHAT</h1>
-        <p>real time messages will appear here: hoping the screen will load up with 10 most recent messages sent.</p>
+        <p>Connection status: {status}</p>
         <div id="rocchat_spacing">
             <div className="blank"></div>
             <div id="rocchat">
@@ -139,9 +144,7 @@ useEffect(() => {
                     </div>
                 </form>
             </div>
-            <div className="blank">
-                <p>{status}</p>
-            </div>
+            <div className="blank"></div>
         </div>
         <div>
             <p>Messages sent: {sent} </p>
