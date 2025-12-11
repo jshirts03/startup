@@ -471,19 +471,19 @@ app.listen(3000, () => {
 
 ## FINAL PREP ##
 
-What is the default port for HTTP/HTTPS/SSH? 
+**What is the default port for HTTP/HTTPS/SSH?**
 - Http (80)
 - Https (443)
 - Ssh (22)
 
-What does an HTTP status code in the range of 300/400/500 indicate?
+**What does an HTTP status code in the range of 300/400/500 indicate?**
 - 200
 - 500 (server error)
 - 400 (client side/ wrong URL, no login)
 - 300 (redirects)
 
 
-What does the HTTP header content-type allow you to do?
+**What does the HTTP header content-type allow you to do?**
 ```
 await fetch('api/send', {
             method: 'post',
@@ -497,7 +497,7 @@ await fetch('api/send', {
 Methods: POST, GET, PUT, DELETE
 
 
-What does a “Secure cookie”/”Http-only cookie”/”Same-site cookie” do? 
+**What does a “Secure cookie”/”Http-only cookie”/”Same-site cookie” do?**
 - Cookies are stored in the browser, and are more secure than local storage. Different specification
 
 Secure cookie: Through Https
@@ -519,7 +519,7 @@ function setAuthCookie(res, token){
 ```
 
 
-Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /api/document?
+**Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /api/document?**
 
 Examples of Middleware
 ```
@@ -533,23 +533,232 @@ app.use("/api", apiRouter);
 ```
 
 
-Given the following Express service code: What does the following front end JavaScript that performs a fetch return?
-Given the following MongoDB query, select all of the matching documents {name:Mark}
-How should user passwords be stored?
-Assuming the following node.js websocket code in the back end, and the following front end websocket code, what will the front end log to the console?
-What is the websocket protocol intended to provide?
-What do the following acronyms stand for? JSX, JS, AWS, NPM, NVM
-Assuming an HTML document with a body element. What text content will the following React component generate?  The react component will use parameters.
-Given a set of React components that include each other, what will be generated
-What does a React component with React.useState do?
-What are React Hooks used for?
-What does the State Hook/Context Hook/Ref Hook/Effect Hook/Performance Hook do? https://react.dev/reference/react/hooks
+**Given the following Express service code: What does the following front end JavaScript that performs a fetch return?**
+
+Example get request:
+```
+await fetch('api/send', {
+            method: 'post',
+            body: JSON.stringify(chat),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            },
+            credentials: "include",
+        });
+```
+
+
+**Given the following MongoDB query, select all of the matching documents {name:Mark}**
+
+Examples of MangoDB queries
+```
+// find all houses
+db.house.find();
+
+// find houses with two or more bedrooms
+db.house.find({ beds: { $gte: 2 } });
+
+// find houses that are available with less than three beds
+db.house.find({ status: 'available', beds: { $lt: 3 } });
+
+// find houses with either less than three beds or less than $1000 a night
+db.house.find({ $or: [(beds: { $lt: 3 }), (price: { $lt: 1000 })] });
+
+// find houses with the text 'modern' or 'beach' in the summary
+db.house.find({ summary: /(modern|beach)/i });
+```
+
+
+**How should user passwords be stored?**
+
+-Hashed! Tokenization
+-Salt (add a bit before hashing)
+
+
+**Assuming the following node.js websocket code in the back end, and the following front end websocket code, what will the front end log to the console?**
+
+Example front end:
+```
+ React.useEffect(() => {
+        let port = window.location.port;
+            const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+            const socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+            socketRef.current = socket
+            socket.onopen = (event) => {
+                let message = {name: userName, message: "JOINED"}
+                socket.send(JSON.stringify(message))
+                setStatus("connected")
+            };
+            socket.onclose = (event) => {
+            //Send a message into the chat titled "Username, left"
+                setStatus("disconnected")
+            };
+            socket.onmessage = async (msg) => {
+            try {
+                //turn message into readable elements
+                //then set chats to include message as the first element of the array
+                let message = JSON.parse(msg.data)
+                setChats((prevChats) => {const trimmed = prevChats.length >= 10 ? prevChats.slice(0, 9) : prevChats; return [message, ...trimmed];})
+            } catch {
+                console.log('an error occurred')
+            }
+            };
+
+        return () => {
+            if (socket) {
+                socket.close();
+            }
+        };
+    }, []);
+```
+
+Example Backend:
+```
+function wsServer(httpServer) {
+  // Create a websocket object
+  console.log("attempting to establish websocket server")
+  const socketServer = new WebSocketServer({ server: httpServer });
+
+  socketServer.on('connection', (socket) => {
+    socket.isAlive = true;
+
+    // Forward messages to everyone except the sender; had to convert the data to a string so it could be interpreted in the front end
+    socket.on('message', function message(data) {
+      socketServer.clients.forEach((client) => {
+        if (client !== socket && client.readyState === WebSocket.OPEN) {
+          client.send(data.toString('utf8'));
+        }
+      });
+    });
+
+    // Respond to pong messages by marking the connection alive
+    socket.on('pong', () => {
+      socket.isAlive = true;
+    });
+  });
+
+  // Periodically send out a ping message to make sure clients are alive
+  setInterval(() => {
+    socketServer.clients.forEach(function each(client) {
+      if (client.isAlive === false) return client.terminate();
+
+      client.isAlive = false;
+      client.ping();
+    });
+  }, 10000);
+}
+```
+
+**What is the websocket protocol intended to provide?**
+
+![Shrek meme](https://www.asyncapi.com/img/posts/websocket-part1/websocket-shrek.webp)
+
+
+**What do the following acronyms stand for? JSX, JS, AWS, NPM, NVM**
+
+JSX- JavaScript Xml
+JS- Javascript
+AWS- Amazon Web Services
+NPM- Node Package Manager
+NVM - Node Version Manager
+
+
+**Assuming an HTML document with a body element. What text content will the following React component generate?  The react component will use parameters.**
+
+Example from Simon
+```
+import React from 'react';
+
+import { Players } from './players';
+import { SimonGame } from './simonGame';
+
+export function Play(props) {
+  return (
+    <main className='bg-secondary'>
+      <Players userName={props.userName} />
+      <SimonGame userName={props.userName} />
+    </main>
+  );
+}
+```
+
+
+**What does a React component with React.useState do?**
+
+Sets a variable with a set function that will allow you to update the value of a variable
+
+
+**What are React Hooks used for?**
+
+Handling and dealing with state variables. Dynamic re-rendering of components and variables
+
+
+**What does the State Hook/Context Hook/Ref Hook/Effect Hook/Performance Hook do?** 
+
+Example of Effect Hook:
+```
+function ChatRoom({ roomId }) {
+  useEffect(() => {
+    const connection = createConnection(roomId);
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId]);
+```
+
 Given React Router code, select statements that are true.
-What does the package.json file do?
-What does the fetch function do?
-What does node.js do?
-What does pm2 do?
-What does Vite do?
+
+
+**What does the package.json file do?**
+Node dependencies
+Project name
+Define the debugging stuff, when to run Vite, on what port, etc.
+
+Example package.json
+```
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "[My Notes](notes.md)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "homepage": "https://github.com/jshirts03/startup#readme",
+  "devDependencies": {
+    "vite": "^7.1.9"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "react": "^19.2.0",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.3"
+  }
+}
+```
+
+
+**What does the fetch function do?**
+Sends HTTP requests for any API
+
+
+**What does node.js do?**
+Node runs backend services using javascript, the same system and code that the browser uses to run frontend code.
+
+
+**What does pm2 do?**
+Behind the scenes for running the Node server 
+
+
+**What does Vite do?**
+Vite allows you to debug your frontend code. `npm run dev`
+Vite builds our jsx into nice javascript that the browser can read.
 
 
 
